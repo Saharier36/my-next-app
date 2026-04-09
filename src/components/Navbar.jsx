@@ -14,6 +14,9 @@ const links = (
     <li>
       <Link href="/dashboard">Dashboard</Link>
     </li>
+    <li>
+      <Link href="/users">Users</Link>
+    </li>
   </>
 );
 
@@ -54,10 +57,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <Link
-          href={""}
-          className="inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-2 px-4 rounded transition-colors duration-300 cursor-pointer"
-        >
+        <Link href={""} className="btn btn-warning">
           Log In
         </Link>
       </div>

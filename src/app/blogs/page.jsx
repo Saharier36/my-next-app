@@ -49,7 +49,7 @@ const BlogsPage = () => {
               By {blog.author} • {blog.date} • {blog.category}
             </p>
             <p className="text-gray-700 dark:text-gray-300">{blog.content}</p>
-            <Link href={`/blogs/${blog.id}`} className="mt-4 inline-block bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-2 px-4 rounded transition-colors duration-300 cursor-pointer">
+            <Link href={`/blogs/${blog.id}`} className="mt-4 btn btn-warning">
               Read More
             </Link>
           </div>
