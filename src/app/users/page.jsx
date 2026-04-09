@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "All Users",
-  description: "all the users info",
+export const metadata = {
+  title: "all users",
+  description: "all users info",
 };
 
 const UsersPage = async() => {
