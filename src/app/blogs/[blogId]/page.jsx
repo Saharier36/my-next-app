@@ -1,0 +1,101 @@
+// blogs.js
+const blogs = [
+  {
+    id: 1,
+    title: "Getting Started with React",
+    author: "Saharier Omi",
+    date: "2026-04-01",
+    category: "Frontend",
+    excerpt:
+      "React is a powerful JS library for building UIs. Learn the basics of components, props, and state.",
+    readMore: {
+      content:
+        "In this full blog, we dive deep into React components, JSX, state management, lifecycle methods, hooks, and how to structure your first React project efficiently. We'll also discuss best practices, common pitfalls for beginners, and examples of real-world React applications to give you a complete understanding of building modern web interfaces using React.",
+      tags: ["React", "JavaScript", "Frontend"],
+    },
+  },
+  {
+    id: 2,
+    title: "Understanding Next.js Routing",
+    author: "Saharier Omi",
+    date: "2026-04-03",
+    category: "Next.js",
+    excerpt:
+      "Next.js provides file-based routing which makes navigation easier. Learn how to create pages and dynamic routes.",
+    readMore: {
+      content:
+        "This blog explores Next.js file-based routing, dynamic routes, catch-all routes, nested routes, and how to combine routing with API routes for full-stack apps. You'll learn how to organize pages, link components effectively, handle query parameters, and optimize your Next.js applications for both performance and SEO.",
+      tags: ["Next.js", "Routing", "React"],
+    },
+  },
+  {
+    id: 3,
+    title: "Introduction to Express.js",
+    author: "Saharier Omi",
+    date: "2026-04-05",
+    category: "Backend",
+    excerpt:
+      "Express.js is a minimal and flexible Node.js framework. Learn basic server setup and routing.",
+    readMore: {
+      content:
+        "We will cover Express.js installation, middleware, routing, template engines, connecting with databases, and building a REST API step by step. Additionally, this blog explains how to handle errors, structure your backend code efficiently, and integrate third-party libraries to create robust server-side applications.",
+      tags: ["Express.js", "Node.js", "Backend"],
+    },
+  },
+  {
+    id: 4,
+    title: "Why Tailwind CSS is Awesome",
+    author: "Saharier Omi",
+    date: "2026-04-07",
+    category: "CSS",
+    excerpt:
+      "Tailwind CSS allows you to build modern UI quickly using utility-first classes.",
+    readMore: {
+      content:
+        "Tailwind CSS uses utility classes to let you build responsive and modern designs quickly. This blog covers setup, responsive utilities, custom themes, best practices, and tips for making your workflow more efficient. You'll also see practical examples showing how Tailwind can speed up front-end development while keeping your styles maintainable and scalable.",
+      tags: ["Tailwind CSS", "CSS", "Frontend"],
+    },
+  },
+];
+
+const BlogDetailPage = async ({ params }) => {
+  const { blogId } = await params;
+  const blog = blogs.find((blog) => blog.id === parseInt(blogId));
+  console.log("show me", blog);
+  if (!blog) return <p className="text-center mt-10">Blog not found</p>;
+  return (
+    <div className="max-w-3xl mx-auto p-6">
+      <div className="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+          {blog.title}
+        </h2>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+          By {blog.author} • {blog.date} • {blog.category}
+        </p>
+        <p className="text-gray-700 dark:text-gray-300 mb-4">{blog.excerpt}</p>
+
+        {/* Directly show readMore content */}
+        <div className="mt-4 border-t border-gray-200 dark:border-gray-700 pt-4">
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
+            {blog.readMore.content}
+          </p>
+
+          {blog.readMore.tags && (
+            <div className="flex flex-wrap gap-2">
+              {blog.readMore.tags.map((tag, idx) => (
+                <span
+                  key={idx}
+                  className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-xs font-medium px-2 py-1 rounded"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default BlogDetailPage;
