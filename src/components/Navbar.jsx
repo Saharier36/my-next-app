@@ -83,14 +83,14 @@ const Navbar = () => {
           </ul>
         </div>
         <Link href="/" className="btn btn-ghost text-xl">
-          My Blogs
+          Dev Diary
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <Link href={""} className="btn btn-warning">
+        <Link href={"/logIn"} className="btn btn-warning">
           Log In
         </Link>
       </div>

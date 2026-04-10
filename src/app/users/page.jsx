@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "all users",
+  title: "Dev Dairy - Users",
   description: "all users info",
 };
 
